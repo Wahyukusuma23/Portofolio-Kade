@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.bg-bub{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: #191b1f; */
+  z-index: -1;
+}
+.bg-bub::after,
+.bg-bub::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background: hsl(272, 83%, 18%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(70px);
+  mix-blend-mode: lighten;
+}
+
+.bg-bub::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: translate(50%, -50%);
+}
+.bg-bub::after {
+  top: 50%;
+  left: 0px;
+  transform: translateX(-50%);
+}
+/*With gradient background*/
+.bg-bub {
+  background: radial-gradient(
+      circle closest-corner at center 125px,
+      hsl(171, 77%, 12%),
+      #000000 70%
+    )
+    no-repeat;
+}

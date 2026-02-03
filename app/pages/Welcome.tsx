@@ -9,14 +9,6 @@ export default function Welcome() {
 
   return (
     <div className={`relative font-mono whitespace-pre-line`}>
-      <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={80}
-          height={12}
-          priority
-        />
         <Image
           src="/cute-baby.jpg"
           alt="Vercel logomark"

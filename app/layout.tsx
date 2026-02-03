@@ -31,9 +31,9 @@ export default function RootLayout({
       >
         <div className="bg-bub">
         </div>
-        <div className="font-sans flex">
+        <div className="font-sans flex max-h-screen overflow-hidden">
           <Sidebar />
-          <main className="flex flex-col gap-[32px] flex-1 row-start-2 items-center p-10 sm:items-start">
+          <main className="flex flex-col gap-[32px] flex-1 row-start-2 items-center p-10 sm:items-start max-h-full overflow-y-auto">
             {children}
           </main>
         </div>

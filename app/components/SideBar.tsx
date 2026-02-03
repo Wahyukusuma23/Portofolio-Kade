@@ -22,19 +22,20 @@ export default function SideBar() {
   { href: '/findme', label: 'Find Me' },
 ]
     return(
-        <div className="font-mono menu-left border-r border-gray-600 p-10 w-80 h-screen flex items-center justify-end relative">
+        <div className="font-mono menu-left border-r border-gray-600 p-10 pr-0 w-80 h-screen flex items-center justify-end relative">
           <ol className="text-right leading-12">
             {tabs.map((t) => (
               <li key={t.href} className="pb-0">
                 <Link
                   href={t.href}
-                  className={`block ${
+                  className={`block leading leading-10 ${
                     pathname === t.href
-                      ? 'border-b-2 border-blue-500 font-semibold'
+                      ? 'font-bold'
                       : ''
                   }`}
                 >
                   {t.label}
+                    <span className='w-10 h-[1px] bg-gray-600 inline-block'></span>
                 </Link>
               </li>
             ))}

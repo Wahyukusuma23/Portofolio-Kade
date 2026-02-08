@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -24,7 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-.bg-bub{
+.bg-bub {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -35,7 +35,7 @@ body {
 }
 .bg-bub::after,
 .bg-bub::before {
-  content: "";
+  content: '';
   display: inline-block;
   position: absolute;
   background: hsl(272, 83%, 18%);

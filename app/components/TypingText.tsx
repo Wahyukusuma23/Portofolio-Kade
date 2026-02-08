@@ -8,7 +8,11 @@ type Props = {
   className?: string
 }
 
-export default function TypingText({ text, speed = 100, className = '' }: Props) {
+export default function TypingText({
+  text,
+  speed = 100,
+  className = '',
+}: Props) {
   const [displayed, setDisplayed] = useState('')
   const [index, setIndex] = useState(0)
 

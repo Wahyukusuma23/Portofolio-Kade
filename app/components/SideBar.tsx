@@ -33,7 +33,7 @@ export default function SideBar() {
               }`}
             >
               {t.label}
-              <span className="w-10 h-[1px] bg-gray-600 inline-block "></span>
+              <span className="w-10 h-px bg-gray-600 inline-block "></span>
             </Link>
           </li>
         ))}

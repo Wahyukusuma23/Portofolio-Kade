@@ -2,13 +2,15 @@
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import AnimatedDivider from '.././components/BigArrow'
 
+// Remove-Item -Recurse -Force .next
 import { useState } from 'react'
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.9,
     },
   },
 }
@@ -29,7 +31,7 @@ export default function Buttons() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-1 bg-black/40 backdrop-blur-sm flex items-center justify-center"
+            className="fixed font-mono inset-0 z-1 bg-black/40 backdrop-blur-sm flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -59,7 +61,7 @@ export default function Buttons() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="space-y-4 w-full grid grid-cols-3 space-x-4 font-mono "
+        className="w-full grid grid-cols-3 gap-4 font-mono "
       >
         <motion.div
           variants={item}
@@ -74,17 +76,9 @@ export default function Buttons() {
               initial="rest"
               whileHover="hover"
               animate="rest"
-              className="group flex hover:cursor-pointer items-center justify-center gap-2 border border-gray-500 px-6 py-2 overflow-hidden"
+              className="flex hover:cursor-pointer items-center justify-start gap-x-2 hover:underline hover:font-bold py-2 overflow-hidden"
             >
-              <motion.span
-                variants={{
-                  rest: { x: 6 },
-                  hover: { x: -4 },
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                What I do
-              </motion.span>
+              <span>What I do</span>
               <motion.span
                 variants={{
                   rest: { opacity: 0, x: -8 },
@@ -99,17 +93,9 @@ export default function Buttons() {
               initial="rest"
               whileHover="hover"
               animate="rest"
-              className="group flex hover:cursor-pointer items-center justify-center gap-2 border border-gray-500 px-6 py-2 overflow-hidden"
+              className="flex hover:cursor-pointer items-center justify-start gap-x-2 hover:underline hover:font-bold py-2 overflow-hidden"
             >
-              <motion.span
-                variants={{
-                  rest: { x: 6 },
-                  hover: { x: -4 },
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                Tools
-              </motion.span>
+              <motion.span>Tools</motion.span>
               <motion.span
                 variants={{
                   rest: { opacity: 0, x: -8 },
@@ -122,13 +108,50 @@ export default function Buttons() {
             </motion.button>
           </div>
         </motion.div>
-        <motion.div variants={item} className="">
-          Production Operator
-          <p>PT. Surabaya Autocomp Indonesia</p>
-          <span>2017-2019</span>
-          <div className="flex">
-            <a href="#">What I do:</a>
-            <a href="">Tools:</a>
+        <AnimatedDivider />
+        <motion.div
+          variants={item}
+          className="border border-dashed border-gray-500 p-10"
+        >
+          <p className="text-2xl leading-none">Production Operator</p>
+          <p className="tex-xl font-bold">PT. Surabaya Autocomp Indonesia</p>
+          <span>2014-2017</span>
+          <div className="grid grid-cols-2 gap-2 mt-2">
+            <motion.button
+              onClick={() => setOpen(true)}
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+              className="flex hover:cursor-pointer items-center justify-start gap-x-2 hover:underline hover:font-bold py-2 overflow-hidden"
+            >
+              <span>What I do</span>
+              <motion.span
+                variants={{
+                  rest: { opacity: 0, x: -8 },
+                  hover: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight className="w-4 h-4" />
+              </motion.span>
+            </motion.button>
+            <motion.button
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+              className="flex hover:cursor-pointer items-center justify-start gap-x-2 hover:underline hover:font-bold py-2 overflow-hidden"
+            >
+              <motion.span>Tools</motion.span>
+              <motion.span
+                variants={{
+                  rest: { opacity: 0, x: -8 },
+                  hover: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight className="w-4 h-4" />
+              </motion.span>
+            </motion.button>
           </div>
         </motion.div>
 
